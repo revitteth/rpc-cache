@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  rpc-cache:
+    image: ghcr.io/revitteth/rpc-cache:latest
+    container_name: rpc-cache
+    ports:
+      - "6969:6969"
+    volumes:
+      - ./cache.db:/root/cache.db
+    command: ["./rpccache", "-file", "/root/cache.db"]
